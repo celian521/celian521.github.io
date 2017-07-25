@@ -2,11 +2,431 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title></title>
-	<link rel="stylesheet" href="">
+	<!--[if IE]>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<![endif]-->
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<title>WEB策炼工作室</title>
+	<meta name="keywords" content="网站设计,网页设计,响应该式设计,前端设计,策炼,策炼工作室,html5,css3">
+	<meta name="description" content="WEB策炼工作室,为您量身打造最适合的网站,专业网站设计,响应该式设计">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/common.css">
+	<link rel="stylesheet" href="css/component.css" />
+	<script src="lib/jquery-1.9.1.min.js"></script>
+	<!--[if lt IE 9]>
+	<script src="lib/html5shiv.js"></script>
+	<script src="lib/jquery.placeholder-1.0.js"></script>
+	<script src="lib/css3-mediaqueries.js"></script>
+	<![endif]-->
+	<!-- JavaScript -->
+	<script src="lib/jquery.scrollTo.js"></script>
+	<script src="lib/jquery.nav.js"></script>
+	<script src="lib/modernizr.custom.js"></script>
+	<script>
+	$(document).ready(function() {
+		$('#nav').onePageNav({
+			begin: function() {
+			console.log('start')
+			},
+			end: function() {
+			console.log('stop')
+			}
+		});
+		$(".phonelink").click(function(){
+			$(".phonemenu").toggle();
+		});
+		$(".phonemenu li").click(function(){
+			$(".phonemenu").toggle();
+		});
+		// Store variables
+			var accordion_head = $('.joinus > dt'),
+				accordion_body = $('.joinus > dd');
+			// Open the first tab on load
+			accordion_head.first().addClass('active').next().slideDown('normal');
+			// Click function
+			accordion_head.on('click', function(event) {
+				// Disable header links
+				event.preventDefault();
+				// Show and hide the tabs on click
+				if ($(this).attr('class') != 'active'){
+					accordion_body.slideUp('normal');
+					$(this).next().stop(true,true).slideToggle('normal');
+					accordion_head.removeClass('active');
+					$(this).addClass('active');
+				}
+			});
+
+	});
+	</script>
 </head>
 <body>
-	Hello World Stephen
+	<header class="bg_white tx">
+		<div class="wrap">
+			<h1>
+				<a href="index.html"><img src="images/logo.png" alt="WEB" id="logo" class="fl"></a>
+				<span id="webname" class="xs4 fl">
+					策炼<span class="xc_cyan">工作室</span>
+				</span>
+			</h1>
+			<nav id="nav">
+				<ul>
+					<li class="current">
+						<a href="index.html#index">首页</a>
+					</li>
+					<li>
+						<a href="index.html#service">服务</a>
+					</li>
+					<li>
+						<a href="index.html#energy">能量</a>
+					</li>
+					<li>
+						<a href="index.html#works">作品</a>
+					</li>
+					<li>
+						<a href="index.html#contact">联系</a>
+					</li>
+				</ul>
+			</nav>
+			<div class="menu">
+				<a href="#" class="phonelink"> <i class="icon icon_menu">&nbsp;</i>
+				</a>
+				<ul class="phonemenu" style="display: none;">
+					<li class="current">
+						<a href="index.html#index">首页</a>
+					</li>
+					<li>
+						<a href="index.html#service">服务</a>
+					</li>
+					<li>
+						<a href="index.html#energy">能量</a>
+					</li>
+					<li>
+						<a href="index.html#works">作品</a>
+					</li>
+					<li>
+						<a href="index.html#contact">联系</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</header>
+	<section id="index" class="bg_img1">
+		<div class="yl xc_cyan xs4" style="border-color:#2cb6aa">为您量身打造最适合的网站</div>
+	</section>
+	<section id="service" class="bg_gray blank">
+		<div class="wrap">
+			<h2 class="xs5">服&nbsp;&nbsp;务</h2>
+			<br>
+			<ul class="service">
+				<li class="span_3">
+					<div>
+						<span class="icon_ser icon_s1"> </span>
+						<h3 class="xs3">响应式布局</h3>
+						<p class="xc_gray">多设备自适应</p>
+						<br>
+						<p>快捷解决多设备显示适应问题，为不同终端的用户提供更加舒适的界面和更好的用户体验</p>
+					</div>
+				</li>
+				<li class="span_3">
+					<div>
+						<span class="icon_ser icon_s2"> </span>
+						<h3 class="xs3">网站外包</h3>
+						<p class="xc_gray">优秀的人做优秀的事</p>
+						<br>
+						<p>外包服务包含：网站更新、网站改版、网站运营、图片设计、用户体验、服务器管理等</p>
+					</div>
+				</li>
+				<li class="span_3">
+					<div>
+						<span class="icon_ser icon_s3"> </span>
+						<h3 class="xs3">网站搭建</h3>
+						<p class="xc_gray">不只是简单的制作页面</p>
+						<br>
+						<p>接受企业网站、商城、门户、品牌宣传等网站类型的搭建，并提供策划、设计、运营等服务</p>
+					</div>
+				</li>
+				<li class="span_3">
+					<div >
+						<span class="icon_ser icon_s4"> </span>
+						<h3 class="xs3">界面设计</h3>
+						<p class="xc_gray">界面是人与物体互动的媒介</p>
+						<br>
+						<p>后台界面，交互设计，Android、iPad、iPhone App界面设计，站点响应式界面设计</p>
+					</div>
+				</li>
+			</ul>
+			<div class="fc"></div>
+		</div>
+	</section>
+	<section class="bg_img2">
+		<div class="yl xc_white xs4">说出您的想法，我们来实现...</div>
+	</section>
+	<section class="bg_gray blank">
+		<div class="wrap">
+			<ul class="service2">
+				<li class="span_4 tl">
+					<div class="span_3 hm">
+						<span class="icon_ser icon_s11"></span>
+					</div>
+					<div class="span_9">
+						<h3 class="xs2">HTML5+CSS3前端</h3>
+						<p class="xc_gray">最高效的代码，最新的技术，兼容IE8以上所有浏览器和移动设备</p>
+					</div>
+				</li>
+				<li class="span_4 tl">
+					<div class="span_3 hm">
+						<span class="icon_ser icon_s12"></span>
+					</div>
+					<div class="span_9">
+						<h3 class="xs2">响应式页面</h3>
+						<p class="xc_gray">提供Android、iphone、iPad、Mac、PC...多种屏幕尺寸响应式架构</p>
+
+					</div>
+				</li>
+				<li class="span_4 tl">
+					<div class="span_3 hm">
+						<span class="icon_ser icon_s13"></span>
+					</div>
+					<div class="span_9">
+						<h3 class="xs2">JS+JQuery</h3>
+						<p class="xc_gray">提供JS和JQ特效服务，如焦点图、相册、在线客服、菜单导航特效</p>
+					</div>
+				</li>
+				<li class="span_4 tl">
+					<div class="span_3 hm">
+						<span class="icon_ser icon_s14"></span>
+					</div>
+					<div class="span_9">
+						<h3 class="xs2">PHP开发</h3>
+						<p class="xc_gray">CMS二次开发、功能插件开发、项目管理系统开发、客服系统开发</p>
+					</div>
+				</li>
+				<li class="span_4 tl">
+					<div class="span_3 hm">
+						<span class="icon_ser icon_s15"></span>
+					</div>
+					<div class="span_9">
+						<h3 class="xs2">Photoshop图像制作</h3>
+						<p class="xc_gray">logo标志、名片、网站banner、手机界面、软件界面...</p>
+					</div>
+				</li>
+				<li class="span_4 tl">
+					<div class="span_3 hm">
+						<span class="icon_ser icon_s16"></span>
+					</div>
+					<div class="span_9">
+						<h3 class="xs2">网站定制</h3>
+						<p class="xc_gray">接受企业站、购物商城站、门户站、论坛站、资讯站定制开发</p>
+					</div>
+				</li>
+			</ul>
+			<div class="fc"></div>
+		</div>
+	</section>
+	<section id="energy" class="bg_white blank">
+		<div class="wrap">
+			<h2 class="xs5">能&nbsp;&nbsp;量</h2>
+			<h3 class="xs3">为提高自己的水平而不断进取/努力...</h3>
+			<br>
+			<ul class="energy">
+				<li class="span_6">
+					<div>
+						<p>HTML5</p>
+						<div class="progress-bar cyan animate">
+							<span style="width: 93%;">
+								<span></span>
+							</span>
+						</div>
+					</div>
+				</li>
+				<li class="span_6">
+					<div>
+						<p>CSS3</p>
+						<div class="progress-bar cyan animate">
+							<span style="width: 85%;">
+								<span></span>
+							</span>
+						</div>
+					</div>
+				</li>
+				<li class="span_6">
+					<div>
+						<p>Photoshop</p>
+						<div class="progress-bar cyan animate">
+							<span style="width: 88%;">
+								<span></span>
+							</span>
+						</div>
+					</div>
+				</li>
+				<li class="span_6">
+					<div>
+						<p>JS/JQuery</p>
+
+						<div class="progress-bar cyan animate">
+							<span style="width: 75%;">
+								<span></span>
+							</span>
+						</div>
+					</div>
+				</li>
+				<li class="span_6">
+					<div>
+						<p>PHP</p>
+						<div class="progress-bar cyan animate">
+							<span style="width: 70%;">
+								<span></span>
+							</span>
+						</div>
+					</div>
+				</li>
+				<li class="span_6">
+					<div>
+						<p>Idea</p>
+						<div class="progress-bar cyan animate">
+							<span style="width: 90%;">
+								<span></span>
+							</span>
+						</div>
+					</div>
+				</li>
+			</ul>
+			<div class="fc"></div>
+		</div>
+	</section>
+	<section id="works" class="bg_gray blank">
+		<div class="wrap">
+			<h2 class="xs5">作&nbsp;&nbsp;品</h2>
+			<h3 class="xs3">对于我们来说，它们更像是件艺术品，我们就是工匠，付出我们的青春，赋予它生命！</h3>
+			<br>
+			<ul class="grid cs-style-5">
+				<li class="span_4">
+						<figure>
+							<img src="images/p_design.png" alt="img04">
+							<figcaption>
+								<h3 class="xc_white xs2">专题/创意设计</h3>
+								<span>互联网思维，解决方案...</span>
+								<a href="list_design.php" target="_blank">查看更多</a>
+							</figcaption>
+						</figure>
+				</li>
+				<li class="span_4">
+						<figure>
+							<img src="images/p_responsive.png" alt="img04">
+							<figcaption>
+								<h3 class="xc_white xs2">HTML5/响应式设计</h3>
+								<span>解决多设备显示适应问题</span>
+								<a href="list_responsive.php" target="_blank">浏览作品</a>
+							</figcaption>
+						</figure>
+				</li>
+				<li class="span_4">
+					<figure>
+						<img src="images/p_shop.png" alt="img04">
+						<figcaption>
+							<h3 class="xc_white xs2">商城系统/论坛/门户</h3>
+							<span>购物商城，论坛，门户网站设计</span>
+							<a href="list_shop.php" target="_blank"> 浏览作品 </a>
+						</figcaption>
+					</figure>
+				</li>
+				<li class="span_4">
+					<figure>
+						<img src="images/p_site.png" alt="img04">
+						<figcaption>
+							<h3 class="xc_white xs2">企业形象网站设计</h3>
+							<span>定制企业网站，多设备自适应</span>
+							<a href="list_site.php" target="_blank"> 浏览作品 </a>
+						</figcaption>
+					</figure>
+				</li>
+				<li class="span_4">
+					<figure>
+						<img src="images/p_cdr.png" alt="img04">
+						<figcaption>
+							<h3 class="xc_white xs2">平面设计作品</h3>
+							<span>logo标志、名片、网站banner...</span>
+							<a href="list_cdr.php" target="_blank"> 浏览作品 </a>
+						</figcaption>
+					</figure>
+				</li>
+				<li class="span_4">
+					<figure>
+						<img src="images/p_app.png" alt="img04">
+						<figcaption>
+							<h3 class="xc_white xs2">手机APP界面</h3>
+							<span>手机界面、软件界面...</span>
+							<a href="list_app.php"> 浏览作品 </a>
+						</figcaption>
+					</figure>
+				</li>
+			</ul>
+			<div class="fc"></div>
+		</div>
+	</section>
+	<section id="contact" class="bg_cyan blank">
+<div class="wrap">
+		<h2 class="xs5 xc_white">联&nbsp;&nbsp;系</h2>
+		<h3 class="xs3 xc_white">Hi，您可以通过以下任何一种方式与我们联系！</h3>
+		<br>
+		<br></div>
+		<div class="wrap_contact">
+			<div class="span_6">
+				<ul class="xc_white xs3 contact">
+					<li> <i class="icon icon_01"></i>
+						<a href="http://sighttp.qq.com/authd?IDKEY=%idkey%" target="_blank"><span class="xc_white">412134207</span></a>
+					</li>
+					<li> <i class="icon icon_02"></i>
+						<span>15902086786</span>
+					</li>
+					<li>
+						<i class="icon icon_03"></i>
+						<span>celian521@qq.com</span>
+					</li>
+					<li id="qrcode">
+						<span class="fl">
+							<img src="images/wxqrcode.jpg" alt="">
+							<br>
+							<span class="xs2">关注微信</span>
+						</span>
+						<span class="fl">
+							<img src="images/qrcode.png" alt="">
+							<br>
+							<span class="xs2">网址二维码</span>
+						</span>
+					</li>
+				</ul>
+				<br>
+				<br>
+			</div>
+			<div class="span_6">
+				<form action="#" method="post" name="myform">
+					<ul>
+						<li class="span_6">
+							<input type="text" id="t01" name="name" class="footer_input" style="width:90%" placeholder="您的姓名"></li>
+						<li class="span_6">
+							<input type="text" id="t02" name="phone" class="footer_input" placeholder="联系电话"></li>
+						<li class="span_12">
+							<input type="text" id="t03" name="email" class="footer_input" placeholder="邮箱地址"></li>
+						<li class="span_12">
+							<textarea class="footer_input" id="content" name="content" rows="" cols="" placeholder="留言信息" style="height: 80px"></textarea>
+						</li>
+						<li  class="span_12">
+							<input type="submit" class="formbtn" name="submit" value="发送留言" ></li>
+					</ul>
+				</form>
+			</div>
+			<div class="fc"></div>
+		</div>
+	</section>
+	<footer class="bg_black">
+		<br>
+		<a href="index.html"><img src="images/logo_w.png" alt="策炼工作室"></a>
+		<div id="copyright" class="xc_gray">
+			Copyright 2014-2017 &copy;
+			<span class="xc_cyan">策炼工作室</span>
+			All Rights Reserved.
+		</div>
+	</footer>
 </body>
 </html>
